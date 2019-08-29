@@ -1,0 +1,89 @@
+\documentclass[11pt,letterhead,draft]{recommendation}
+\setlogo{msri-small}
+\usepackage[backend=biber,style=numeric,natbib=true]{biblatex}
+%% natbib allows \citet and \citep to exist
+\addbibresource{references.bib}
+
+%% Put your information here
+\newcommand{\myname}{Aaron M. Hale}
+\signature{\myname}
+
+\newcommand{\myopening}{Dear admissions officer,}
+%% Default opening for all the letters
+
+\newcommand{\myclosing}{Kind regards}
+%% Pick if you have a graphic for the signature or not If you have a
+%% graphic for a signature, uncomment the lines below.  Replace signature.pdf with
+%% your signature file.
+\signature{}
+\renewcommand{\myclosing}{Kind regards, \\
+\fromsig{\includegraphics[height=3\baselineskip]{signature.png}}\\\fromname{\myname{}}}
+
+%% More information
+\newcommand{\email}{{\tt ahale@msri.org}} 
+\newcommand{\position}{IT Manager}
+\newcommand{\department}{Information Technology Department}
+\newcommand{\university}{Mathematical Sciences Research Institute}
+\newcommand{\universityaddress}{17 Gauss Way\\
+  Berkeley, CA\\
+  94720}
+\address{\myname{}\\\position{}\\\department{}\\university{}\\\universityaddress{}}
+\newcommand{\cred}{}
+\newcommand{\info}{I am the \position{} at \university{} in the \department{}}
+\newcommand{\phone}{+1-510-643-6069}
+\newcommand{\imaddr}{(email / google hangouts){\tt}}%last!
+\newcommand{\disciplines}{IT Manager}
+\newcommand{\tenure}{5 years} 
+
+%% Information about the student/colleague
+\newcommand{\studentfull}{Thomas Anderson}
+\newcommand{\student}{Thomas}
+%% Prononuns for the boilerplate text
+\newcommand{\He}{She}
+\newcommand{\he}{she}
+\newcommand{\His}{Her}
+\newcommand{\his}{her}
+\newcommand{\studenttime}{9 years}
+\newcommand{\teammates}{three team-mates} %%can put the number here if needed
+
+
+%% Macros defined by the letter class
+\address{\myname{}\\\position{}\\\department{}\\\university{}\\\universityaddress{}}
+
+\newcommand{\recommendationbase}[1]{
+  \begin{refsection}
+  My name is \myname{} \cred{}and \info{}.
+  I have been working at this position for \tenure{}.
+
+  I have known \studentfull{} for \studenttime{}.
+  \student{} has demonstrated to me (in several environments) his extensive range of competency. He has an excellent grasp of very challenging and interdisciplinary material which draw from: computer science, electrical engineering, and physics.
+  
+  I worked with \student{} on several projects over nearly the past decade. In every case, \student{} demonstrated: leadership, outstanding quality of work, and a willingness to take on tasks with little instruction. I also enjoy following his work in sustainable construction and on-going professional development.
+
+
+  %% Summary goes here.  Put \skillsmastered{} in argument for default skills.
+  #1
+
+  If you have further questions, I can be contacted at \phone{},
+  \email{}, \imaddr{}.
+  
+  \closing{\myclosing{}} 
+
+% make sure you have the bibmagic option for bibtex
+% \bibliography{references}  %bibtex
+  \printbibliography{}  %biber/biblatex
+\end{refsection}
+}
+
+
+\newcommand{\recommendation}[2]{\recommendationbase{ To summarize, I would highly recommend \student{} for his proposed graduate studies at Pennsylvania State University. I believe the Cybersecurity and Information Assurance program would benefit greatly from his attention and dedication.}  }
+\newcommand{\recommendationGrant}[1]{\recommendationbase{To summarize, I would highly recommend \student{} for #1.    \skillsmastered{}}
+  \setfield{#1}}
+
+\begin{document}
+
+\chalmersletter{Graduate Admissions}{Mechatronics}
+
+
+\end{document}
+
