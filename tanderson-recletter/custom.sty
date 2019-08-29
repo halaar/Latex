@@ -1,0 +1,117 @@
+%% $Header: https://projects.cs.ru.is/svn/foley-research/trunk/Assessment/recommendations/recommendation.cls 440 2015-02-27 10:29:14Z foley $
+%% $Id: custom.sty 28 2018-02-19 22:41:23Z foley $
+%% Reykjavik University Recommendation macros
+
+%% Commands for the various universities that are most commonly used
+\newcommand{\genericletter}[3]{%
+  \begin{letter}{#1\\#2}%
+    \opening{Dear admissions officer,}%
+    \recommendation{#1}{#3}%
+  \end{letter}%
+}
+
+\newcommand{\chalmersletter}[2]{%
+
+  \begin{letter}{Pennsylvania State University\\%
+      \\%
+      Graduate School Admissions\\%
+      RE: Thomas Anderson}%
+    \opening{Dear admissions officer,}
+    \recommendation{Chalmers}{#2}%
+  \end{letter}%
+}
+
+\newcommand{\dtuletter}[2]{
+  \begin{letter}{Technical University of Denmark\\
+      %#1\\ % I will need to fix this with xargs later
+      Anker Engelunds Vej 1\\
+      Building 101A\\
+      2800 Kgs. Lyngby\\
+      Denmark
+    }
+    \opening{Dear admissions officer,}%
+    \recommendation{DTU}{#2}%
+  \end{letter}%
+}
+
+\newcommand{\ethletter}[2]{%
+  \begin{letter}{ETH Zurich\\
+      #1\\
+      Leonhardstrasse 21\\
+      8092 Zurich}%
+    \opening{Dear admissions officer,}%
+    \recommendation{ETH}{#2}%
+  \end{letter}%
+}
+
+\newcommand{\kthletter}[2][Department of Electrical Engineering]{
+  % KTH is usually through \swedenletter, but we can send directly
+  \begin{letter}{#1\\
+      KTH Royal Institute of Technology\\
+      Valhallavägen 79\\
+      100 44 Stockholm\\
+      Sweden}%
+    \opening{Dear admissions officer,}%
+    \recommendation{KTH}{#2}%
+  \end{letter}%
+}
+
+\newcommand{\tudelftletter}[2]{\begin{letter}{TU Delft\\%
+      #1\\%
+      Mekelweg 2\\%
+      2628 CD Delft\\%
+      Netherlands}%
+    \opening{Dear admissions officer,}%
+    \recommendation{TU Delft}{#2}%
+  \end{letter}%
+}
+
+\newcommand{\tueindhoveletter}[2]{\begin{letter}{Eindhoven University of Technology\\%
+      #1\\%
+      PO Box 513\\5600 MB Eindhoven\\The Netherlands}%
+    \opening{Dear admissions officer,}%
+    \recommendation{TU/e}{#2}%
+  \end{letter}%
+}
+
+
+\newcommand{\usdkletter}[2]{
+  \begin{letter}{Faculty of Engineering\\
+      #1
+      University of Southern Denmark\\
+      Niels Bohrs Allé 1\\
+      DK-5230 Odense M\\
+      Denmark\\
+    }
+    \opening{Dear admissions officer,}%
+    \recommendation{USD}{#2}%
+  \end{letter}%
+}
+
+
+\newcommand{\swedenletter}[2]{ 
+  %% not perfect, this one should not have a department
+  %% different, we don't need department
+  %% So we should just throw it away
+  %% {university}{program}
+  \begin{letter}{University Admissions in Sweden\\
+      FE 20102\\
+      SE-839 87 Östersund\\
+      Sweden}%
+    \opening{Dear admissions officer,}%
+    \recommendation{#1}{#2}%
+  \end{letter}%
+}
+
+%% on the rest of the pages, these will be the headers.  The first letter
+%% indicates which side.  "r" for right, "c" for center, "l" for left 
+%\lfooter{}
+%\rfooter{}
+%% set these for if you need to adjust the footers. 
+
+%% ---------------- End of Class --------------------------
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: recommendation-template.tex
+%%% End:
